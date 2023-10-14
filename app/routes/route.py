@@ -17,7 +17,7 @@ def get_route():
 
     return render_template('routes.html', routes = routes)
 
-@app.route('/ruta/<int:id>/<format>', methods=['GET'])
+@app.route('/ruta/<int:id>&<format>', methods=['GET'])
 def show_route(id, format):
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM route where id = %s', (id,))
