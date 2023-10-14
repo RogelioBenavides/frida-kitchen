@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity</title>
+</head>
+<body>
+    <form action="/identity" method="POST">
+        <select name="identity_id" id="identity_id">
+            {% for identity in identities %}
+            <option value="{{identity[1]}}">{{identity[0]}}</option>
+            {% endfor %}
+        </select>
+        <select name="format" id="format">
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+        </select>
+        <button type="submit">Mostrar</button>
+    </form>
+</body>
+</html>
