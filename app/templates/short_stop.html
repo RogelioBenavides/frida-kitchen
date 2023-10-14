@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Stop</title>
+</head>
+<body>
+    <form action="/short_stop" method="POST">
+        <select name="short_stop_id" id="short_stop_id">
+            {% for short_stop in short_stops %}
+            <option value="{{short_stop[0]}}">{{short_stop[0]}}</option>
+            {% endfor %}
+        </select>
+        <select name="format" id="format">
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+        </select>
+        <button type="submit">Mostrar</button>
+    </form>
+</body>
+</html>
