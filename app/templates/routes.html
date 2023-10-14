@@ -6,7 +6,7 @@
     <title>Rutas</title>
 </head>
 <body>
-    <form action="/rutas" method="GET">
+    <form action="/rutas" method="POST">
         <select name="route_id" id="route_id">
             {% for route in routes %}
             <option value="{{route[1]}}">{{route[0]}}</option>
