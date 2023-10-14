@@ -1,11 +1,7 @@
 from app import app 
 
-from app.routes.route import *
-from app.routes.truck import *
-from app.routes.sample import *
-from app.routes.identity import *
-from app.routes.identity_company import *
-from app.routes.company import *
+# Import .py from routes
+from app.routes import route, truck, sample, identity, identity_company, long_stop, company
 
 if __name__ == "__main__":
     app.run(debug = True)
