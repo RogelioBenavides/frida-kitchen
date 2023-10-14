@@ -5,8 +5,8 @@ import xml.etree.ElementTree as ET
 @app.route('/camiones', methods=['GET','POST'])
 def get_truck():
     if request.method == 'POST':
-        id = request.args.get('truck_id')
-        format = request.args.get('format')
+        id = request.form.get('truck_id')
+        format = request.form.get('format')
 
         return redirect(url_for('show_truck', id = id, format = format))
     
@@ -17,7 +17,7 @@ def get_truck():
 
     return render_template('trucks.html', trucks = trucks)
 
-@app.route('/camion/<int:id>/<format>', methods=['GET'])
+@app.route('/camion/<int:id>&<format>', methods=['GET'])
 def show_truck(id, format):
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM truck where id = %s', (id,))
