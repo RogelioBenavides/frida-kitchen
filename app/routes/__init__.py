@@ -11,3 +11,4 @@ from . import meals
 from . import meal_ingredients
 from . import orders
 from . import short_stop
+from . import ingredients
