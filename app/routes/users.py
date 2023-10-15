@@ -2,33 +2,33 @@ from app import app, mysql
 from flask import Flask, render_template, request, jsonify, make_response, redirect, url_for
 import xml.etree.ElementTree as ET
 
-@app.route('/route', methods=['GET','POST'])
-def get_route():
+@app.route('/users', methods=['GET','POST'])
+def get_users():
     if request.method == 'POST':
-        id = request.form.get('route_id')
+        id = request.form.get('users_id')
         format = request.form.get('format')
 
-        return redirect(url_for('show_route', id = id, format = format))
+        return redirect(url_for('show_users', id = id, format = format))
     
     cursor = mysql.connection.cursor()
-    cursor.execute('SELECT name, id FROM route')
-    routes = cursor.fetchall()
+    cursor.execute('SELECT user_name, id FROM users')
+    users = cursor.fetchall()
     cursor.close()
 
-    return render_template('routes.html', routes = routes)
+    return render_template('users.html', users = users)
 
-@app.route('/route/<int:id>&<format>', methods=['GET'])
-def show_route(id, format):
+@app.route('/users/<int:id>&<format>', methods=['GET'])
+def show_users(id, format):
     cursor = mysql.connection.cursor()
-    cursor.execute('SELECT * FROM route where id = %s', (id,))
+    cursor.execute('SELECT * FROM identity where id = %s', (id,))
     row = cursor.fetchone()
     cursor.close()
 
     if not row:
-        return jsonify({"mensaje":"Ruta no encontrada"}), 404
+        return jsonify({"mensaje":"Usuario no encontrado"}), 404
     
     cursor = mysql.connection.cursor()
-    cursor.execute('DESCRIBE route')
+    cursor.execute('DESCRIBE users')
     columns = [column[0] for column in cursor.fetchall()]
     cursor.close()
 
@@ -37,7 +37,7 @@ def show_route(id, format):
     if format == 'json':
         return jsonify(route_dataJSON)
     elif format == 'xml':
-        route_dataXML = ET.Element('route')
+        route_dataXML = ET.Element('users')
 
         for column, value in zip(columns, row):
             ET.SubElement(route_dataXML, column).text = str(value)
