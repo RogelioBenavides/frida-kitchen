@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meals</title>
+</head>
+<body>
+    <form action="/ordering" method="POST">
+        <label for="meals_id">¿Qué deseas comer?</label><br>
+        <select name="meals_id" id="meals_id">
+            {% for meal in meals %}
+            <option value="{{meal[1]}}">{{meal[0]}}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <label for="quantity_id">Introduce cantidad de comida:</label><br>
+        <select name="quantity_id" id="quantity_id">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <br>
+        <label for="meals_id">Introduce tu dirección:</label><br>
+        <input type="text" id="address_id" name="address_id" required minlength="4" maxlength="8" size="25" />
+        <br>
+        <label for="meals_id">Formato:</label>
+        <br>
+        <select name="format" id="format">
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+        </select>
+        <button type="submit">Mostrar</button>
+    </form>
+    <p>TU comida es {{ordered_meal}}</p>
+    <p>El precio es de: {{total_meal_price}}</p>
+    <a type="submit" href="">Proceder con el pago</a>
+
+
+</body>
+</html>
