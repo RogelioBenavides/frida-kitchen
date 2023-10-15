@@ -1,4 +1,4 @@
-from app import app
+from app import app 
 
 # Import .py from routes
 from app.routes import route, truck, sample, identity, identity_company, long_stop, company
