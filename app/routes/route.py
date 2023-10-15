@@ -2,7 +2,7 @@ from app import app, mysql
 from flask import Flask, render_template, request, jsonify, make_response, redirect, url_for
 import xml.etree.ElementTree as ET
 
-@app.route('/rutas', methods=['GET','POST'])
+@app.route('/route', methods=['GET','POST'])
 def get_route():
     if request.method == 'POST':
         id = request.form.get('route_id')
@@ -17,7 +17,7 @@ def get_route():
 
     return render_template('routes.html', routes = routes)
 
-@app.route('/ruta/<int:id>&<format>', methods=['GET'])
+@app.route('/route/<int:id>&<format>', methods=['GET'])
 def show_route(id, format):
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM route where id = %s', (id,))

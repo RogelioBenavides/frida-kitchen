@@ -2,7 +2,7 @@ from app import app, mysql
 from flask import Flask, render_template, request, jsonify, make_response, redirect, url_for
 import xml.etree.ElementTree as ET
 
-@app.route('/muestras', methods=['GET','POST'])
+@app.route('/sample', methods=['GET','POST'])
 def get_sample():
     if request.method == 'POST':
         id = request.form.get('sample_id')
@@ -17,7 +17,7 @@ def get_sample():
 
     return render_template('samples.html', samples = samples)
 
-@app.route('/muestra/<int:id>&<format>', methods=['GET'])
+@app.route('/sample/<int:id>&<format>', methods=['GET'])
 def show_sample(id, format):
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM sample where id = %s', (id,))
