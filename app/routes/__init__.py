@@ -12,4 +12,7 @@ from . import meal_ingredients
 from . import orders
 from . import order_meals
 from . import short_stop
+from . import payments
 from . import ingredients
+from . import users
+
