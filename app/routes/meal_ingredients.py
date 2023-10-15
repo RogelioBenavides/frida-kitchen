@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify, make_response, redir
 import xml.etree.ElementTree as ET
 
 @app.route('/meal_ingredients', methods=['GET','POST'])
-def get_meals():
+def get_meal_ingredients():
     if request.method == 'POST':
         id = request.form.get('meal_ingredients_id')
         format = request.form.get('format')
