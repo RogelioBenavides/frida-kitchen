@@ -4,6 +4,6 @@ from flask_socketio import SocketIO
 
 sio = SocketIO(app)
 
-@app.route('/')
+@app.route('/server')
 def index():
-    return render_template('index.html')
+    return render_template('server.html')
