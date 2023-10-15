@@ -17,7 +17,7 @@ def get_orders():
 
     return render_template('orders.html', orders = orders)
 
-@app.route('/order/<int:id>&<format>', methods=['GET'])
+@app.route('/orders/<int:id>&<format>', methods=['GET'])
 def show_order(id, format):
     cursor = mysql.connection.cursor()
     cursor.execute('SELECT * FROM orders WHERE id = %s', (id,))
