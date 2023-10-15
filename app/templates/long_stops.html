@@ -6,7 +6,7 @@
     <title>Long Stop</title>
 </head>
 <body>
-    <form action="/long_stops" method="POST">
+    <form action="/long_stop" method="POST">
         <select name="long_stop_id" id="long_stop_id">
             {% for long_stop in long_stops %}
             <option value="{{long_stop[1]}}">{{long_stop[0]}}</option>
