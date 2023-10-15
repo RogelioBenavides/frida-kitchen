@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Meals</title>
+</head>
+<body>
+    <form action="/order_meals" method="POST">
+        <select name="order_meals_id" id="order_meals_id">
+            {% for orders_meal in order_meals %}
+            <option value="{{orders_meal[0]}}">{{orders_meal[0]}}</option>
+            {% endfor %}
+        </select>
+        <select name="format" id="format">
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+        </select>
+        <button type="submit">Mostrar</button>
+    </form>
+</body>
+</html>
