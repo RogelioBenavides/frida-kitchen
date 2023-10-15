@@ -9,7 +9,7 @@ class Usuario (HttpUser):
         self.client.get('/order_meals')
     @task
     def prueba_request_xml(self):
-        self.client.get('/order_meals/1&json')
+        self.client.get('/order_meals/5&json')
     @task
     def prueba_request_json(self):
-        self.client.get('/order_meals/1&xml')
+        self.client.get('/order_meals/5&xml')
