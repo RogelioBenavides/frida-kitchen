@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments</title>
+</head>
+<body>
+    <form action="/payments" method="POST">
+        <select name="payments_id" id="payments_id">
+            {% for payment in payments %}
+            <option value="{{payment[1]}}">{{payment[0]}}</option>
+            {% endfor %}
+        </select>
+        <select name="format" id="format">
+            <option value="json">JSON</option>
+            <option value="xml">XML</option>
+        </select>
+        <button type="submit">Mostrar</button>
+    </form>
+</body>
+</html>
