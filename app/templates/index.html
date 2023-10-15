@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Location Updates</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <h1>Location Updates</h1>
+    <p>Latitude: <span id="latitude"></span></p>
+    <p>Longitude: <span id="longitude"></span></p>
+
+    <script type="text/javascript">
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('connect', function() {
+            console.log('Conectado al servidor de WebSockets');
+            
+            function updateLocation() {
+                if ("geolocation" in navigator) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var latitude = position.coords.latitude;
+                        var longitude = position.coords.longitude;
+                        
+                        document.getElementById('latitude').innerText = latitude;
+                        document.getElementById('longitude').innerText = longitude;
+                        console.log('Ubicación actualizada: ' + latitude + ", " + longitude);
+                        
+                        socket.emit('send_location', { latitude: latitude, longitude: longitude });
+                    });
+                } else {
+                    console.log('La geolocalización no está disponible en este navegador.');
+                }
+            }
+            setInterval(updateLocation, 5000);
+            updateLocation();
+        });
+
+        socket.on('disconnect', function() {
+            console.log('Desconectado del servidor de WebSockets');
+        });
+    </script>
+</body>
+</html>
