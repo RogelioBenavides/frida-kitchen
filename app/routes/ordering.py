@@ -8,7 +8,7 @@ def ordering():
     if request.method == 'POST':
         id = request.form.get('meals_id')
         format = request.form.get('format')
-        quantity = request.form.get('quantity_id')
+        quantity = float(request.form.get('quantity_id'))
         #print(M.show_meals(id, format).get_data(as_text=True))
         ordered_meal = M.show_meals(id, format).get_data(as_text=True)
 
@@ -20,12 +20,12 @@ def ordering():
         cursor.execute('SELECT price FROM meals WHERE id = %s', (id,))
         unit_price = cursor.fetchall()
         cursor.close()
-        print(unit_price[0])
-        strin = ""
-        strin = strin + unit_price[0]
-        total_meal_price = quantity * int(strin)
+        print(unit_price[0][0])
+        #strin = ""
+        #strin = strin + unit_price[0]
+        total_meal_price = quantity * int(unit_price[0][0])
 
-        return render_template('ordering.html', meals = meals, ordered_meal = ordered_meal, total_meal_price = total_meal_price)
+        return render_template('ordering.html', meals = meals, quantity = quantity, ordered_meal = ordered_meal, total_meal_price = total_meal_price)
         #return redirect(url_for('show_meals', id = id, format = format))
 
     cursor = mysql.connection.cursor()
