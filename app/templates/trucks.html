@@ -6,7 +6,7 @@
     <title>Camiones</title>
 </head>
 <body>
-    <form action="/camiones" method="POST">
+    <form action="/truck" method="POST">
         <select name="truck_id" id="truck_id">
             {% for truck in trucks %}
             <option value="{{truck[1]}}">{{truck[0]}}</option>

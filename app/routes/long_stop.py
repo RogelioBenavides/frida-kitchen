@@ -2,7 +2,7 @@ from app import app, mysql
 from flask import Flask, render_template, request, jsonify, make_response, redirect, url_for
 import xml.etree.ElementTree as ET
 
-@app.route('/long_stops', methods=['GET','POST'])
+@app.route('/long_stop', methods=['GET','POST'])
 def get_long_stops():
     if request.method == 'POST':
         id = request.form.get('long_stop_id')

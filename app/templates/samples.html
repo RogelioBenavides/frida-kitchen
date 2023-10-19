@@ -6,7 +6,7 @@
     <title>Muestras</title>
 </head>
 <body>
-    <form action="/muestras" method="POST">
+    <form action="/sample" method="POST">
         <select name="sample_id" id="sample_id">
             {% for sample in samples %}
             <option value="{{sample[1]}}">{{sample[0]}}</option>
