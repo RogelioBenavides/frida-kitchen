@@ -15,3 +15,4 @@ from . import short_stop
 from . import payments
 from . import ingredients
 from . import users
+from . import ordering
