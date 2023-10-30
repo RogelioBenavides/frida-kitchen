@@ -1,15 +1,20 @@
-# Cocina de Frida
-Integrantes:
-<br> Carlos Enrique
-<br> Joel Ángel
-<br> José Manuel
-<br> Rogelio Eduardo
+# Frida's Kitchen 
+Participants:
+<br> Carlos Enrique Lozada Rodríguez
+<br> Joel Ángel López Plata
+<br> José Manuel Gallegos
+<br> Rogelio Eduardo Benavides de la Rosa
 <br>
 
-# Inicializar
-1. Iniciar entorno virtual<br>```python -m venv .venv```
-2. Iniciar entorno virtual\
+# Data Base
+1. Create a data base
+2. Restore the data base<br>```mysql --user=your-user --password your-data-base < frida-cocina.sql```
+3. Create a .env file as the .env.example
+
+# Start Project
+1. Creating a Virtual Environment<br>```python -m venv .venv```
+2. Activate Virtual Environment\
   * Windows:<br>```.venv\Scripts\activate```
   * Linux/Mac:<br>```source .venv/bin/activate```
-3. Instalar dependencias<br>```pip install -r requirements.txt```
-4. Correr la aplicación<br>```python app.py```
+3. Install dependencies<br>```pip install -r requirements.txt```
+4. Run the app<br>```python app.py```
