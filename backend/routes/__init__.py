@@ -14,3 +14,4 @@ from . import uploaded_file
 from . import identity_company
 from . import sample
 from . import route
+from . import sampling
