@@ -11,3 +11,4 @@ from . import payments
 from . import orders
 from . import identity
 from . import uploaded_file
+from . import identity_company
