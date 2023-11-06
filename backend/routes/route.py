@@ -46,7 +46,7 @@ def add_route():
     cursor = mysql.connection.cursor()
     query = """
         INSERT INTO route (name, beginning_stop_id, end_stop_id, truck_id, distance, average_speed, short_stops_count, time, first_stem_distance, first_stem_time, second_stem_distance, second_stem_time, short_stops_time, traveling_time, stops_between_0_5, stops_between_5_15, stops_between_15_30, stops_between_30_60, stops_between_60_120, stops_between_120_plus, average_short_stop_duration, is_valid, fuel_consumption, aux1, aux2, aux3)
-        VALUES (%(name)s, %(beginning_stop_id)s, %(end_stop_id)s, %(truck_id)s, %(distance)s, %(average_speed)s, %(short_stops_count)s, %(time)s, %(first_stem_distance)s, %(first_stem_time)s, %(second_stem_distance)s, %(second_stem_time)s, %(aux1)s, %(traveling_time)s, %(stops_between_0_5)s, %(stops_between_5_15)s, %(stops_between_15_30)s, %(stops_between_30_60)s, %(stops_between_60_120)s, %(stops_between_120_plus)s, %(average_short_stop_duration)s, %(is_valid)s, %(fuel_consumption)s, %(aux1)s, %(aux2)s, %(aux3)s)
+        VALUES (%(name)s, %(beginning_stop_id)s, %(end_stop_id)s, %(truck_id)s, %(distance)s, %(average_speed)s, %(short_stops_count)s, %(time)s, %(first_stem_distance)s, %(first_stem_time)s, %(second_stem_distance)s, %(second_stem_time)s, %(short_stops_time)s, %(traveling_time)s, %(stops_between_0_5)s, %(stops_between_5_15)s, %(stops_between_15_30)s, %(stops_between_30_60)s, %(stops_between_60_120)s, %(stops_between_120_plus)s, %(average_short_stop_duration)s, %(is_valid)s, %(fuel_consumption)s, %(aux1)s, %(aux2)s, %(aux3)s)
     """
     cursor.execute(query, form_data)
     mysql.connection.commit()
