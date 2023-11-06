@@ -16,3 +16,4 @@ from . import sample
 from . import route
 from . import sampling
 from . import truck
+from . import short_stop
