@@ -21,8 +21,6 @@ def company():
 def add_company():
     form_data = request.form.to_dict(flat=True)
 
-    print(form_data)
-
     cursor = mysql.connection.cursor()
     query = """
         INSERT INTO company (name, has_file_in_process, route_count, average_speed, average_trip_distance, average_stem_distance, short_stop_time, traveling_time, resting_time, time_radius_short_stop, distance_radius_short_stop, distance_traveled, average_short_stop_duration, average_trip_duration, average_trip_traveling_time, average_stop_count_per_trip_sd, average_trip_distance_sd, average_stem_distance_sd, average_trip_duration_sd, average_trip_stop_time_sd, average_trip_traveling_time_sd, aux1, aux2, aux3)
