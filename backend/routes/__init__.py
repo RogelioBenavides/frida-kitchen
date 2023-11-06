@@ -6,6 +6,6 @@ from . import backend
 from . import ingredients
 from . import meals
 from . import users
-# from . import company
+from . import company
 from . import payments
 from . import orders
