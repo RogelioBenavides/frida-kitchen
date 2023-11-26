@@ -3,4 +3,3 @@ flask_mysqldb
 python-dotenv
 flask_socketio
 locust
-
