@@ -21,29 +21,20 @@ mysql = MySQL(app)
 # Secret Key for session purposes
 app.secret_key = '485k2'
 
-from flask_app import *
-
-"""
-# App
-from .backend import app
-from . import backend
-
-# Routes
-from . import ingredients
-from . import meals
-from . import users
-from . import company
-from . import payments
-from . import orders
-from . import identity
-from . import uploaded_file
-from . import identity_company
-from . import sample
-from . import route
-from . import sampling
-from . import truck
-from . import short_stop
-from . import long_stop
-from . import meal_ingredients
-from . import order_meals
-"""
+from flask_app import company
+from flask_app import identity_company
+from flask_app import identity
+from flask_app import ingredients
+from flask_app import long_stop
+from flask_app import meal_ingredients
+from flask_app import meals
+from flask_app import order_meals
+from flask_app import orders
+from flask_app import payments
+from flask_app import route
+from flask_app import sample
+from flask_app import sampling
+from flask_app import short_stop
+from flask_app import truck
+from flask_app import uploaded_file
+from flask_app import users
