@@ -1,4 +1,4 @@
-from .backend import app, mysql
+from flask_app import app, mysql
 from flask import redirect, request, render_template
 
 @app.route('/identity_company')
