@@ -1,4 +1,4 @@
-from .backend import app, mysql
+from flask_app import app, mysql
 from flask import redirect, request, render_template, jsonify
 from http import HTTPStatus
 
