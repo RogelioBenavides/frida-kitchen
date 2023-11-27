@@ -20,3 +20,4 @@ from . import short_stop
 from . import long_stop
 from . import meal_ingredients
 from . import order_meals
+from . import jwt

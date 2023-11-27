@@ -3,4 +3,4 @@ flask_mysqldb
 python-dotenv
 flask_socketio
 locust
-
+flask_jwt_extended

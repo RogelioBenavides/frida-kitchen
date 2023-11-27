@@ -1,26 +1,18 @@
-from flask import Flask, jsonify, request
+from flask import Flask
+from flask import jsonify
+from flask import request
 from flask_cors import CORS
-from flask_jwt_extended import create_access_token, JWTManager
-from flask_mysqldb import MySQL
-from dotenv import load_dotenv
-import os
-
-app = Flask(__name__)
-
-load_dotenv()
-
-app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST')
-app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER')
-app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
-app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB')
-
-mysql = MySQL(app)
+from .backend import app, mysql
+from flask import request, jsonify
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import JWTManager
 
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Setup the Flask-JWT-Extended extension
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 jwt = JWTManager(app)
+
 
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.

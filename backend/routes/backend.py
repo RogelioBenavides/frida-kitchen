@@ -1,9 +1,12 @@
 from flask import Flask, jsonify
 from flask_mysqldb import MySQL
 from dotenv import load_dotenv
+from flask_cors import CORS
 import os
 
 app = Flask(__name__, template_folder='templates')
+
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 load_dotenv()
 
