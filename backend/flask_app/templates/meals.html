@@ -81,7 +81,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form method="post" action="/meals/add">
+                    <form method="post" action="/meals/add" enctype="multipart/form-data">
                         <!--Add Meal FORM-->
                         <div class="row row-cols-2">
                             <!--Meal Name-->
@@ -115,6 +115,7 @@
                             <div class="col-8">
                                 <input class="w-100" type="file" name="image" value="" required>
                             </div>
+
                         </div>
                 </div>
                         <div class="modal-footer">
