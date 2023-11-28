@@ -42,15 +42,15 @@ def add_meal():
     meal_name = request.form['meal_name']
     price = request.form['price']
     description = request.form['description']
-    file = request.form['image']
+    file = request.files['image']
 
     # Checking if the image is valid
-    if file:
-        try:
-            img = Image.open(img.stream)
-            img.verify()
-        except Exception as e:
-            return redirect('/meals') # Leave with no changes
+    try:
+        img = Image.open(file.stream)
+        img.verify()
+    except Exception as e:
+        print(e)
+        return redirect('/meals') # Leave with no changes
 
     # Upload Image to IMGGB
     url = "https://api.imgbb.com/1/upload"
