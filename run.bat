@@ -7,11 +7,11 @@ echo Ejecutando microservicio backend en el puerto 5000
 start "Backend" cmd /c python backend\app.py
 timeout /nobreak /t 2 >nul
 
-echo Ejecutando microservicio en el puerto 5001
+echo Ejecutando microservicio Inicio y Registro en el puerto 5001
 start "AuthService" cmd /c python auth_service\app.py
 timeout /nobreak /t 2 >nul
 
-echo Ejecutando microservicio en el puerto 5002
+echo Ejecutando microservicio Ordenes en el puerto 5002
 start "OrdersService" cmd /c python orders_service\app.py
 timeout /nobreak /t 2 >nul
 
