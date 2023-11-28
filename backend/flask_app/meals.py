@@ -1,5 +1,6 @@
 from flask_app import app, mysql
 from flask import redirect, request, render_template
+from PIL import Image
 
 @app.route('/meals')
 def meals():
@@ -23,7 +24,13 @@ def add_meal():
     description = request.form['description']
     file = request.form['image']
 
-    if meal_name and price:
+    # Checking if the image is valid
+    if file:
+        try:
+            img = Image.open(img.stream)
+            img.verify()
+        except Exception as e:
+            return redirect('/meals') # Leave with no changes
         cursor = mysql.connection.cursor()
         cursor.execute("INSERT INTO meals (meal_name, price) VALUES (%s, %s)", (meal_name, price))
         mysql.connection.commit()

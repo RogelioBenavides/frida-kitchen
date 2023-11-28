@@ -1,5 +1,5 @@
-flask
-flask_mysqldb
-python-dotenv
-flask_socketio
-locust
+Flask-MySQLdb==2.0.0
+Flask-SocketIO==5.3.6
+locust==2.19.0
+Pillow==10.1.0
+python-dotenv==1.0.0
