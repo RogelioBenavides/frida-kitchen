@@ -4,6 +4,7 @@ from PIL import Image
 import base64
 import io
 import requests
+import json
 import os
 
 @app.route('/meals')
@@ -69,12 +70,16 @@ def add_meal():
               "image": img_base64}
     
     response = requests.post(api_url, params)
+    response = json.loads(response.text)
 
-    if meal_name and price and description and img:
+    saved_img_url = response["data"]["url"]
+
+    if meal_name and price and description and img and saved_img_url:
         cursor = mysql.connection.cursor()
-        cursor.execute("INSERT INTO meals (meal_name, price) VALUES (%s, %s)", (meal_name, price))
+        cursor.execute("INSERT INTO meals (meal_name, price, description, image_url) VALUES (%s, %s, %s, %s)", (meal_name, price, description, saved_img_url))
         mysql.connection.commit()
         cursor.close()
+
     return redirect('/meals')
 
 @app.route('/meals/edit/<string:id>', methods=['POST'])
