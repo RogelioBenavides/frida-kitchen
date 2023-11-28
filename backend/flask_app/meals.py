@@ -1,6 +1,8 @@
 from flask_app import app, mysql
 from flask import redirect, request, render_template
 from PIL import Image
+import io
+import requests
 
 @app.route('/meals')
 def meals():
@@ -31,6 +33,20 @@ def add_meal():
             img.verify()
         except Exception as e:
             return redirect('/meals') # Leave with no changes
+
+    # Upload Image to IMGGB
+    url = "https://api.imgbb.com/1/upload"
+
+    with io.BytesIO() as output:
+        img.save(output, format="PNG")
+        binary_file = output.getvalue()
+
+    headers = {'Content-Type': 'application/octet-stream'}
+
+    response = requests.post(url, data=binary_file, headers=headers)
+
+
+    if meal_name and price and description and img:
         cursor = mysql.connection.cursor()
         cursor.execute("INSERT INTO meals (meal_name, price) VALUES (%s, %s)", (meal_name, price))
         mysql.connection.commit()
