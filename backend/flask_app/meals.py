@@ -1,5 +1,5 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template
+from flask import redirect, request, render_template, jsonify
 from PIL import Image
 import io
 import requests
@@ -17,6 +17,24 @@ def meals():
     indices = list(range(len(columns)))
 
     return render_template('meals.html', results = results, columns = columns, indices = indices)
+
+@app.route('/meals/json')
+def mealsJson():
+    cursor = mysql.connection.cursor()
+
+    # Execute the query
+    cursor.execute("SELECT * from meals")
+
+    # Fetch all results
+    results = cursor.fetchall()
+
+    # Get column names from the cursor description
+    columns = [column[0] for column in cursor.description]
+
+    # Convert each row into a dictionary
+    dict_results = [dict(zip(columns, row)) for row in results]
+
+    return jsonify(dict_results)
 
 @app.route('/meals/add', methods=['POST'])
 def add_meal():

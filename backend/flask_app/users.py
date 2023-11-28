@@ -1,5 +1,6 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template
+from flask import redirect, request, render_template, jsonify
+from http import HTTPStatus
 
 @app.route('/users')
 def users():
@@ -29,6 +30,25 @@ def add_user():
         mysql.connection.commit()
         cursor.close()
     return redirect('/users')
+
+@app.route('/users/frontAdd', methods=['POST'])
+def add_user_front():
+    user_name = request.json.get('user_name', None)
+    last_name = request.json.get('last_name', None)
+    email = request.json.get('email', None)
+    password = request.json.get('password', None)
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * from users WHERE email = %s AND user_password = %s", (email, password) )
+    results = cursor.fetchall()
+    if len(results) != 0:
+        return jsonify({"msg": "Email already registered"}), HTTPStatus.BAD_REQUEST
+    
+    if user_name and last_name and email and password:
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO users (user_name, last_name, email, user_password, user_role) VALUES (%s, %s, %s, %s, 'customer')", (user_name, last_name, email, password))
+        mysql.connection.commit()
+        cursor.close()
+    return jsonify({"msg": "User added"}), HTTPStatus.OK
 
 @app.route('/users/edit/<string:id>', methods=['POST'])
 def edit_user(id):
