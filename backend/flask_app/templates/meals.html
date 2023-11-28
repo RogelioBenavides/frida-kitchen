@@ -43,19 +43,35 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form method="post" action="/meals/edit/{{ result[0] }}">
+                                <form method="post" action="/meals/edit/{{ result[0] }}" enctype="multipart/form-data">
                                     <div class="row row-cols-2">
+                                        <!--Meal Name-->
                                         <div class="col-4 text-end">
                                             <label for="meal_name">Nombre de la Comida:</label>
                                         </div>
                                         <div class="col-8">
                                             <input class="w-100" type="text" name="meal_name" value="{{ result[1] }}" required>
                                         </div>
+                                        <!--Meal Price-->
                                         <div class="col-4 text-end">
                                             <label for="price">Precio:</label>
                                         </div>
                                         <div class="col-8">
                                             <input class="w-100" type="text" name="price" value="{{ result[2] }}" required>
+                                        </div>
+                                        <!--Meal Description-->
+                                        <div class="col-4 text-end">
+                                            <label for="description">Descripción:</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <textarea class="w-100" type="text" name="description" value="{{ result[3] }}" required>{{ result[3] }}</textarea>
+                                        </div>
+                                        <!--Meal Image-->
+                                        <div class="col-4 text-end">
+                                            <label for="image">Imagen:</label>
+                                        </div>
+                                        <div class="col-8">
+                                            <input class="w-100" type="file" name="image" value="">
                                         </div>
                                     </div>
                             </div>
