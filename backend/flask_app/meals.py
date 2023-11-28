@@ -1,8 +1,10 @@
 from flask_app import app, mysql
 from flask import redirect, request, render_template, jsonify
 from PIL import Image
+import base64
 import io
 import requests
+import os
 
 @app.route('/meals')
 def meals():
@@ -53,16 +55,20 @@ def add_meal():
         return redirect('/meals') # Leave with no changes
 
     # Upload Image to IMGGB
-    url = "https://api.imgbb.com/1/upload"
+    api_url = "https://api.imgbb.com/1/upload"
 
-    with io.BytesIO() as output:
-        img.save(output, format="PNG")
-        binary_file = output.getvalue()
+    img = Image.open(file.stream)
 
-    headers = {'Content-Type': 'application/octet-stream'}
+    img_bytes = io.BytesIO()
+    img.save(img_bytes, format="JPEG")
+    img_bytes = img_bytes.getvalue()
 
-    response = requests.post(url, data=binary_file, headers=headers)
+    img_base64 = base64.b64encode(img_bytes).decode('utf-8')
 
+    params = {"key":os.environ.get('IMGBB_KEY'),
+              "image": img_base64}
+    
+    response = requests.post(api_url, params)
 
     if meal_name and price and description and img:
         cursor = mysql.connection.cursor()
