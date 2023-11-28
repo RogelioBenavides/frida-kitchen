@@ -17,8 +17,11 @@ def meals():
 
 @app.route('/meals/add', methods=['POST'])
 def add_meal():
+    # Getting the form fields
     meal_name = request.form['meal_name']
     price = request.form['price']
+    description = request.form['description']
+    file = request.form['image']
 
     if meal_name and price:
         cursor = mysql.connection.cursor()
