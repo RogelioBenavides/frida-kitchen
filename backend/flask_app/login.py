@@ -1,6 +1,7 @@
 from flask_app import app, mysql
 from flask import Flask, request, render_template, session, redirect
 
+@app.route('/')
 @app.route("/login")
 def login():
     return render_template('login.html')

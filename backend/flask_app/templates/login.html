@@ -6,6 +6,10 @@
 <section class="container d-flex flex-column align-items-center justify-content-center">
     <!-- Login -->
     <div id="login" class="col-lg-4 col-12">
+        {% if session.loggedin %}
+        <h4>You are logged in as {{ session['email'] }}</h4>
+        {% endif %}
+        {% if not session.loggedin %}
         <form action="/pythonlogin" method="POST">
             <h3>Welcome! Please, login</h3>
             <!--Username-->
@@ -26,6 +30,7 @@
             <button class="btn btn-primary" type="submit">Login</button>
             <h4><i id="msg">{{ msg }}</i></h4>
         </form>
+        {% endif %}
     </div>
 </section>
 {% endblock %}
