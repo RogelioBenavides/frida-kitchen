@@ -19,8 +19,8 @@ app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB')
 # Connection to the database
 mysql = MySQL(app)
 
-# Secret Key for session purposes
-app.secret_key = '485k2'
+# Setup the Flask_JWT-Extended extension
+app.secret_key = '485k5'
 
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
