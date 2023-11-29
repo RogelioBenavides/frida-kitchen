@@ -19,7 +19,7 @@ mysql = MySQL(app)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Setup the Flask-JWT-Extended extension
-app.config["JWT_SECRET_KEY"] = "super-secret" # Change this!
+app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_KEY')
 jwt = JWTManager(app)
 
 # Create a route to authenticate your users and return JWTs. The
@@ -28,11 +28,9 @@ jwt = JWTManager(app)
 def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    print(email, password)
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * from users WHERE email = %s AND user_password = %s", (email, password) )
     results = cursor.fetchall()
-    print(results)
     if len(results) == 0:
         return jsonify({"msg": "Bad username or password"}), 401
 
