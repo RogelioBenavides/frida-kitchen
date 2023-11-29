@@ -99,8 +99,8 @@ def create_order():
             VALUES (%s, 'PAYPAL', %s, %s)
             """, (order_id, data['payment']['purchase_units'][0]['amount']['value'], datetime.utcnow()))
 
-        # mysql.connection.commit()
-        # cursor.close()
+        mysql.connection.commit()
+        cursor.close()
 
         return jsonify({'message': 'Orden creada exitosamente'}), 201
     except Exception as e:
