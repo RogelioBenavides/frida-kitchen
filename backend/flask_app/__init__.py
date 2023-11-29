@@ -11,10 +11,10 @@ app = Flask(__name__)
 load_dotenv()
 
 # Loadiong the os variables as app variables
-app.config['MYSQL_USER'] = os.environ.get('USER')
-app.config['MYSQL_PASSWORD'] = os.environ.get('PASSWORD')
-app.config['MYSQL_HOST'] = os.environ.get('HOST')
-app.config['MYSQL_DB'] = os.environ.get('DB')
+app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER')
+app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
+app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST')
+app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB')
 
 # Connection to the database
 mysql = MySQL(app)
@@ -40,4 +40,4 @@ from flask_app import sampling
 from flask_app import short_stop
 from flask_app import truck
 from flask_app import uploaded_file
-from flask_app import users
+from flask_app import usersfrom flask_app import users
