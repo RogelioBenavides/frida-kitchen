@@ -84,7 +84,7 @@ def create_order():
 
         order_id = cursor.lastrowid
 
-        for meal_data in data.get('cart', []):
+        for meal_data in data.get('order', []):
             print(meal_data['id'])
             cursor.execute("""
                 INSERT INTO order_meals (id_meal, id_order, quantity)
