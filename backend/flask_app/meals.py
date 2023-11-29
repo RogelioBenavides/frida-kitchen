@@ -21,6 +21,18 @@ def meals():
 
     return render_template('meals.html', results = results, columns = columns, indices = indices)
 
+@app.route('/meals/<string:id>')
+def meal(id):
+    print("ID: ", id)
+    cursor = mysql.connection.cursor()
+    print("SELECT * from meals WHERE id = %s", (id,))
+    cursor.execute("SELECT * from meals WHERE id = %s", (id,))
+    results = cursor.fetchall()
+    columns = [column[0] for column in cursor.description]
+    dict_results = [dict(zip(columns, row)) for row in results]
+    jsonify(dict_results)
+    return jsonify(dict_results)
+
 @app.route('/meals/json')
 def mealsJson():
     cursor = mysql.connection.cursor()

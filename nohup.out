@@ -1,0 +1,749 @@
+ * Serving Flask app 'flask_app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.39.107:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 320-714-742
+127.0.0.1 - - [28/Nov/2023 18:38:59] "GET /users HTTP/1.1" 200 -
+ * Serving Flask app 'routes.auth'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.39.107:5001
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 320-714-742
+127.0.0.1 - - [28/Nov/2023 18:39:26] "[33mGET / HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:39:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:44:41] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:45:02] "OPTIONS /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:45:03] "POST /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:45:03] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:45:33] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:45:36] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:45:45] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:45:45] "[33mGET /meals/6 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:45:45] "[33mGET /meals/3 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:46:03] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:46:34] "OPTIONS /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:46:34] "POST /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:46:35] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:46:36] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:46:46] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:46:46] "[33mGET /meals/3 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:46:46] "[33mGET /meals/6 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 18:49:59] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:49:59] "GET /meal/6 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:49:59] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:50:11] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:50:19] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:50:19] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:50:19] "GET /meal/6 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:50:19] "GET /meal/4 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 18:50:19] "GET /meal/7 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:31:38] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:31:50] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:32:06] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:32:12] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:32:51] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:32:56] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:33:00] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:33:00] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:34:30] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:34:30] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:34:39] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:34:39] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:34:56] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:34:56] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:35:12] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:35:12] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:37:31] "GET /meals?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 19:46:57] "GET /meals HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:03:39] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:03:44] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:03:44] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:04:21] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:04:21] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:04:27] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:04:27] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:04:55] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:04:55] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:05:28] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:05:28] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:05:36] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:05:41] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:05:41] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:06:04] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:06:04] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:06:36] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:06:36] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:06:46] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:06:46] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:09:21] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:09:21] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:09:35] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:09:35] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:10:03] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:10:03] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:10:17] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:10:21] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:10:21] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:10:43] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:11:10] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:11:13] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:11:13] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:11:58] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:03] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:03] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:09] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:10] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:13] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:24] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:27] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:33] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:33] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:33] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:47] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:48] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:12:48] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:22:47] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:22:47] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:23:16] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:23:16] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:23:23] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:23:25] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:23:25] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:24:12] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:24:14] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:24:20] "GET /meal/7 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:24:20] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:24:20] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:28:23] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:28:23] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:28:33] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:28:36] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:29:32] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:29:36] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:29:36] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:29:56] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:00] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:03] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:03] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:26] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:28] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:55] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:55] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:30:55] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:31:42] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:31:42] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:31:47] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:31:51] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:31:51] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:36:27] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:36:33] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:36:33] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:36:33] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:37:01] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:37:08] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:37:08] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:37:08] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:34] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:34] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:34] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:39] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:52] "OPTIONS /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:53] "POST /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:53] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:38:55] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:05] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:05] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:05] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:14] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:15] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:15] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:15] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:21] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:22] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:22] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:39:22] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:40:56] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:40:56] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:40:56] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:23] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:23] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:23] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:44] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:44] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:44] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:55] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:55] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:41:55] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:42:08] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:42:08] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:42:08] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:42:45] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:42:49] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:42:49] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:48:25] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:48:25] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:48:28] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:48:28] "[33mGET /meals/2 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:06] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:06] "[33mGET /meals/2 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:24] "[33mGET /meals/2 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:24] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:49] "[33mGET /meals/2 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:49] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:52] "[33mGET /meals/2 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:52] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:49:57] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:02] "[33mGET /meals/5 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:50:02] "[33mGET /meals/1 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:50:02] "[33mGET /meals/4 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:50:02] "[33mGET /meals/2 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 20:50:24] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:24] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:24] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:24] "GET /meal/4 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:27] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:27] "GET /meal/4 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:27] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:35] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:35] "GET /meal/4 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:37] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:54] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:50:57] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:51:00] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:51:00] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 20:51:05] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:17:02] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:17:06] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:17:06] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:38:47] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:38:53] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:39:25] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:39:27] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:40:18] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:40:49] "GET /users HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:40:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Nov/2023 21:41:01] "OPTIONS /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:41:01] "POST /login HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:41:02] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 21:41:04] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:17:36] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:21:17] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:22:17] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:22:18] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:22:29] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:22:41] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:22:41] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:22:41] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:27:44] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:27:44] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:27:44] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:27:47] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:27:52] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:27:52] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:27:52] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:29] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:29] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:29] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:29] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:29] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:29] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:35] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:40] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:29:40] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:31:47] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:31:47] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:31:47] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:31:47] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:31:47] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:33:50] "GET /meal/2 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:33:54] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:35:11] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:35:18] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:35:30] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:35:30] "GET /meal/6 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:35:30] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [28/Nov/2023 22:35:30] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:03:11] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:03:23] "GET /meal/5 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:03:23] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:03:23] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:05:18] "GET /meals/json HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:05:23] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:05:23] "GET /meal/1 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:05:23] "GET /meal/5 HTTP/1.1" 200 -
+ID:  1
+ID:  6
+ID:  3
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('6',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  1
+ID:  7
+ID:  6
+ID:  4
+ID:  5
+SELECT * from meals WHERE id = %s ('5',)
+SELECT * from meals WHERE id = %s ('4',)
+SELECT * from meals WHERE id = %s ('7',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('6',)
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  2
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  2
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+ID:  3
+ID:  2
+ID:  5
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('5',)
+ID:  3
+ID:  5
+SELECT * from meals WHERE id = %s ('5',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  3
+ID:  5
+SELECT * from meals WHERE id = %s ('5',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  3
+ID:  5
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('5',)
+ID:  3
+ID:  5
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('5',)
+ID:  1
+ID:  7
+ID:  3
+SELECT * from meals WHERE id = %s ('7',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  1
+ID:  3
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+ID:  2
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+ID:  2
+ID:  1
+ID:  3
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  1
+ID:  3
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  3
+ID:  1
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  2
+ID:  1
+ID:  3
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  3
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  2
+ID:  1
+ID:  3
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+ID:  4
+ID:  5
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('5',)
+SELECT * from meals WHERE id = %s ('4',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  4
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('4',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  4
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('4',)
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  3
+ID:  2
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  3
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  3
+ID:  1
+ID:  3
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('3',)
+ID:  1
+ID:  2
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  2
+ID:  3
+ID:  2
+ID:  1
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('2',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('2',)
+ID:  2
+SELECT * from meals WHERE id = %s ('2',)
+ID:  1
+ID:  3
+ID:  6
+ID:  5
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('6',)
+SELECT * from meals WHERE id = %s ('5',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  3
+ID:  1
+ID:  5
+SELECT * from meals WHERE id = %s ('5',)
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+ID:  1
+ID:  3
+ID:  5
+SELECT * from meals WHERE id = %s ('3',)
+SELECT * from meals WHERE id = %s ('1',)
+SELECT * from meals WHERE id = %s ('5',)
+ID:  3
+ID:  5
+SELECT * from meals WHERE id = %s ('3',)
+127.0.0.1 - - [29/Nov/2023 00:05:42] "GET /meal/3 HTTP/1.1" 200 -
+127.0.0.1 - - [29/Nov/2023 00:05:42] "GET /meal/5 HTTP/1.1" 200 -
+ * Detected change in '/home/rogelio/frida-kitchen/auth_service/routes/auth.py', reloading
+ * Detected change in '/home/rogelio/frida-kitchen/backend/flask_app/__init__.py', reloading
+juanperez@email.com juanpassword
+((1, 'Juan', 'Pérez', 'juanperez@email.com', 'juanpassword', 'admin', datetime.datetime(2023, 10, 14, 9, 37, 40)),)
+juanperez@email.com juanpassword
+((1, 'Juan', 'Pérez', 'juanperez@email.com', 'juanpassword', 'admin', datetime.datetime(2023, 10, 14, 9, 37, 40)),)
+juanperez@email.com juanpassword
+((1, 'Juan', 'Pérez', 'juanperez@email.com', 'juanpassword', 'admin', datetime.datetime(2023, 10, 14, 9, 37, 40)),)
+juanperez@email.com juanpassword
+((1, 'Juan', 'Pérez', 'juanperez@email.com', 'juanpassword', 'admin', datetime.datetime(2023, 10, 14, 9, 37, 40)),)
+SELECT * from meals WHERE id = %s ('5',)
+Traceback (most recent call last):
+  File "/home/rogelio/frida-kitchen/backend/app.py", line 1, in <module>
+    from flask_app import app
+  File "/home/rogelio/frida-kitchen/backend/flask_app/__init__.py", line 33, in <module>
+    from flask_app import meals
+  File "/home/rogelio/frida-kitchen/backend/flask_app/meals.py", line 3, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+ * Serving Flask app 'routes.auth'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.39.107:5001
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 772-609-136
+Traceback (most recent call last):
+  File "/home/rogelio/frida-kitchen/backend/app.py", line 1, in <module>
+    from flask_app import app
+  File "/home/rogelio/frida-kitchen/backend/flask_app/__init__.py", line 33, in <module>
+    from flask_app import meals
+  File "/home/rogelio/frida-kitchen/backend/flask_app/meals.py", line 3, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+ * Serving Flask app 'routes.auth'
+ * Debug mode: on
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.
+ * Serving Flask app 'routes.auth'
+ * Debug mode: on
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.
+Traceback (most recent call last):
+  File "/home/rogelio/frida-kitchen/backend/app.py", line 1, in <module>
+    from flask_app import app
+  File "/home/rogelio/frida-kitchen/backend/flask_app/__init__.py", line 33, in <module>
+    from flask_app import meals
+  File "/home/rogelio/frida-kitchen/backend/flask_app/meals.py", line 3, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+Traceback (most recent call last):
+  File "/home/rogelio/frida-kitchen/backend/app.py", line 1, in <module>
+    from flask_app import app
+  File "/home/rogelio/frida-kitchen/backend/flask_app/__init__.py", line 33, in <module>
+    from flask_app import meals
+  File "/home/rogelio/frida-kitchen/backend/flask_app/meals.py", line 3, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+ * Serving Flask app 'routes.auth'
+ * Debug mode: on
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.
+ * Serving Flask app 'routes.auth'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.39.107:5001
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 531-958-083
+Traceback (most recent call last):
+  File "/home/rogelio/frida-kitchen/backend/app.py", line 1, in <module>
+    from flask_app import app
+  File "/home/rogelio/frida-kitchen/backend/flask_app/__init__.py", line 33, in <module>
+    from flask_app import meals
+  File "/home/rogelio/frida-kitchen/backend/flask_app/meals.py", line 3, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+Traceback (most recent call last):
+  File "/home/rogelio/frida-kitchen/auth_service/app.py", line 1, in <module>
+    from routes.auth import *
+  File "/home/rogelio/frida-kitchen/auth_service/routes/auth.py", line 1, in <module>
+    from flask import Flask, jsonify, request
+ModuleNotFoundError: No module named 'flask'
+Traceback (most recent call last):
+  File "/home/rogelio/frida-kitchen/backend/app.py", line 1, in <module>
+    from flask_app import app
+  File "/home/rogelio/frida-kitchen/backend/flask_app/__init__.py", line 2, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+ * Serving Flask app 'flask_app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.39.107:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 531-958-083
+/home/rogelio/frida-kitchen/.venv/bin/python: can't find '__main__' module in '/home/rogelio/frida-kitchen/auth_service'
+ * Serving Flask app 'flask_app'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+/home/rogelio/frida-kitchen/.venv/bin/python: can't find '__main__' module in '/home/rogelio/frida-kitchen/auth_service'
+ * Detected change in '/home/rogelio/frida-kitchen/backend/flask_app/__init__.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 531-958-083
+ * Detected change in '/home/rogelio/frida-kitchen/backend/flask_app/meals.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 531-958-083
+ * Detected change in '/home/rogelio/frida-kitchen/backend/flask_app/meals.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 531-958-083
