@@ -48,7 +48,7 @@ def mealsJson():
     return jsonify(dict_results)
 
 @app.route('/meals/favorites')
-def mealsJson():
+def mealsFavorites():
     cursor = mysql.connection.cursor()
 
     # Execute the query with a limit of 9 results
