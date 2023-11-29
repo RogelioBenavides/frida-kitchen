@@ -46,3 +46,21 @@ def mealsJson():
     dict_results = [dict(zip(columns, row)) for row in results]
 
     return jsonify(dict_results)
+
+@app.route('/meals/favorites')
+def mealsJson():
+    cursor = mysql.connection.cursor()
+
+    # Execute the query with a limit of 9 results
+    cursor.execute("SELECT * FROM meals LIMIT 9")
+
+    # Fetch all results
+    results = cursor.fetchall()
+
+    # Get column names from the cursor description
+    columns = [column[0] for column in cursor.description]
+
+    # Convert each row into a dictionary
+    dict_results = [dict(zip(columns, row)) for row in results]
+
+    return jsonify(dict_results)
