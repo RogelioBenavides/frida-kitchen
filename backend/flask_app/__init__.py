@@ -10,10 +10,10 @@ app = Flask(__name__)
 # Set .env variabels into the os
 load_dotenv()
 
-# Loadiong the os variables as app variables
-app.config['MYSQL_USER'] = os.environ.get('MYSQL_HOST')
-app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
+# Loading the os variables as app variables
 app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST')
+app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER')
+app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
 app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB')
 
 # Connection to the database
