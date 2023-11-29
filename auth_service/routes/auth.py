@@ -33,7 +33,6 @@ def login():
     results = cursor.fetchall()
     if len(results) == 0:
         return jsonify({"msg": "Bad username or password"}), 401
-
+        
     access_token = create_access_token(identity=email)
-    print(results[0])
-    return jsonify({"access_token": access_token, "user": results[0][0]})
+    return jsonify({"access_token": access_token, "user": results[0].id})

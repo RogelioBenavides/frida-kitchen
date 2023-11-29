@@ -73,24 +73,29 @@ def get_orders():
 def create_order():
     try:
         data = request.get_json()
+        print(data)
+        # cursor = mysql.connection.cursor()
+        # cursor.execute("""
+        #     INSERT INTO orders (id_route, id_user, created_at)
+        #     VALUES (%s, %s, %s)
+        # """, (data['id_route'], data['id_user'], datetime.utcnow()))
+        # mysql.connection.commit()
 
-        cursor = mysql.connection.cursor()
-        cursor.execute("""
-            INSERT INTO orders (id_route, id_user, created_at)
-            VALUES (%s, %s, %s)
-        """, (data['id_route'], data['id_user'], datetime.utcnow()))
-        mysql.connection.commit()
+        # order_id = cursor.lastrowid
 
-        order_id = cursor.lastrowid
-
-        for meal_data in data.get('meals', []):
-            cursor.execute("""
-                INSERT INTO order_meals (id_meal, id_order, quantity)
-                VALUES (%s, %s, %s)
-            """, (meal_data['id_meal'], order_id, meal_data['quantity']))
+        # for meal_data in data.get('cart', []):
+        #     cursor.execute("""
+        #         INSERT INTO order_meals (id_meal, id_order, quantity)
+        #         VALUES (%s, %s, %s)
+        #     """, (meal_data['id_meal'], order_id, meal_data['quantity']))
         
-        mysql.connection.commit()
-        cursor.close()
+        # cursor.execute(
+        #     """INSERT INTO payments (id_order, payment_method, payment_amount, payment_date)
+        #     VALUES (%s, 'PAYPAL', %s, %s)
+        #     """, (order_id, data['payment'][], datetime.utcnow()))
+
+        # mysql.connection.commit()
+        # cursor.close()
 
         return jsonify({'message': 'Orden creada exitosamente'}), 201
     except Exception as e:
