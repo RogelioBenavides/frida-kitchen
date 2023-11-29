@@ -6,6 +6,12 @@ from flask_jwt_extended import create_access_token
 def login():
     return render_template('login.html')
 
+@app.route("/logout")
+def logout():
+    session.pop('loggedin', None)
+    session.pop('email', None)
+    return redirect('/login')
+
 @app.route("/pythonlogin", methods=['GET', 'POST'])
 def pythonlogin():
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
