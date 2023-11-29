@@ -4,4 +4,4 @@ Flask-SocketIO==5.3.6
 locust==2.19.0
 Pillow==10.1.0
 python-dotenv==1.0.0
-flask_jwt_extended
+Flask_JWT_Extended==4.5.3
