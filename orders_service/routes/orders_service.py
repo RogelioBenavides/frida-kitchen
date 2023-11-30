@@ -73,6 +73,55 @@ def get_orders(id_user):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+@app.route('/orders', methods=["GET"])
+def get_orders(id_user):
+    try:
+        cursor = mysql.connection.cursor()
+
+        cursor.execute("""
+            SELECT orders.id, orders.id_route, orders.created_at,
+                   meals.id as meal_id, meals.meal_name, meals.price, order_meals.quantity
+            FROM orders
+            LEFT JOIN order_meals ON orders.id = order_meals.id_order
+            LEFT JOIN meals ON order_meals.id_meal = meals.id
+        """)
+        
+          # Fetching the results
+        results = cursor.fetchall()
+
+        # Getting column names from the cursor
+        columns = [col[0] for col in cursor.description]
+
+        # Converting each row to a dictionary
+        results = [dict(zip(columns, row)) for row in results]
+        
+        if len(results) == 0:
+            return jsonify({"msg": "Ninguna orden en la lista"}), 401
+
+        orders = {}
+        for result in results:
+            order_id = result['id']
+            if order_id not in orders:
+                orders[order_id] = {
+                    'id': order_id,
+                    'id_route': result['id_route'],
+                    'created_at': result['created_at'].isoformat(),
+                    'meals': []
+                }
+
+            meal_data = {
+                'id_meal': result['meal_id'],
+                'meal_name': result['meal_name'],
+                'price': result['price'],
+                'quantity': result['quantity']
+            }
+
+            orders[order_id]['meals'].append(meal_data)
+
+        return jsonify({'orders': list(orders.values())}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/orders', methods=["POST"])
 def create_order():
     try:
