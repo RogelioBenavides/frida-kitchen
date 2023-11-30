@@ -19,5 +19,9 @@ echo Ejecutando microservicio Tracking en el puerto 5004
 start "TrackingService" cmd /c python tracking_service\app.py
 timeout /nobreak /t 2 >nul
 
+echo Ejecutando microservicio Comidas en el puerto 5006
+start "MealService" cmd /c python tracking_service\app.py
+timeout /nobreak /t 2 >nul
+
 echo Saliendo del entorno virtual
 call deactivate
