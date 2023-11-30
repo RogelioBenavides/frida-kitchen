@@ -23,7 +23,7 @@ CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 app.config["JWT_SECRET_KEY"] = "super-secret" # Change this!
 jwt = JWTManager(app)
 
-@app.route('/orders/<string:id>', methods=["GET"])
+@app.route('/orders/<string:id_user>', methods=["GET"])
 def get_orders(id_user):
     try:
         cursor = mysql.connection.cursor(dictionary=True)
