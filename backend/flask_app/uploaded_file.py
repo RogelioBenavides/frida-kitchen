@@ -1,8 +1,11 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template
+from flask import redirect, request, render_template, session
 
 @app.route('/uploaded_file')
 def uploaded_file():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * from uploaded_file")
     results = cursor.fetchall()
@@ -19,6 +22,9 @@ def uploaded_file():
 
 @app.route('/uploaded_file/add', methods=['POST'])
 def add_uploaded_file():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -33,6 +39,9 @@ def add_uploaded_file():
 
 @app.route('/uploaded_file/edit/<string:id>', methods=['POST'])
 def edit_uploaded_file(id):
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -59,6 +68,9 @@ def edit_uploaded_file(id):
 
 @app.route('/uploaded_file/delete', methods=['GET'])
 def delete_uploaded_file():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     id_to_delete = request.args.get('id')
     
     cursor = mysql.connection.cursor()

@@ -1,8 +1,11 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template
+from flask import redirect, request, render_template, session
 
 @app.route('/identity_company')
 def identity_company():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * from identity_company")
     results = cursor.fetchall()
@@ -19,6 +22,9 @@ def identity_company():
 
 @app.route('/identity_company/add', methods=['POST'])
 def add_identity_company():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -33,6 +39,9 @@ def add_identity_company():
 
 @app.route('/identity_company/edit/<string:id>', methods=['POST'])
 def edit_identity_company(id):
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -58,6 +67,9 @@ def edit_identity_company(id):
 
 @app.route('/identity_company/delete', methods=['GET'])
 def delete_identity_company():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     id_to_delete = request.args.get('id')
     
     cursor = mysql.connection.cursor()
