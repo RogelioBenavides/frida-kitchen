@@ -1,8 +1,11 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template
+from flask import redirect, request, render_template, session
 
 @app.route('/sample')
 def sample():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     # Obtén el número total de registros en la tabla
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT COUNT(*) from sample")
@@ -41,6 +44,9 @@ def sample():
 
 @app.route('/sample/add', methods=['POST'])
 def add_sample():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -55,6 +61,9 @@ def add_sample():
 
 @app.route('/sample/edit/<string:id>', methods=['POST'])
 def edit_sample(id):
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -93,6 +102,9 @@ def edit_sample(id):
 
 @app.route('/sample/delete', methods=['GET'])
 def delete_sample():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     id_to_delete = request.args.get('id')
     
     cursor = mysql.connection.cursor()

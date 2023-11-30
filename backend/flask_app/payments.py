@@ -1,8 +1,11 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template
+from flask import redirect, request, render_template, session
 
 @app.route('/payments')
 def payments():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * from payments")
     results = cursor.fetchall()
@@ -19,6 +22,9 @@ def payments():
 
 @app.route('/payments/add', methods=['POST'])
 def add_payment():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     print(form_data)
@@ -35,6 +41,9 @@ def add_payment():
 
 @app.route('/payments/edit/<string:id>', methods=['POST'])
 def edit_payment(id):
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -61,6 +70,9 @@ def edit_payment(id):
 
 @app.route('/payments/delete', methods=['GET'])
 def delete_payment():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     id_to_delete = request.args.get('id')
     
     cursor = mysql.connection.cursor()

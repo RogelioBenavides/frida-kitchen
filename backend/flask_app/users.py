@@ -1,9 +1,12 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template, jsonify
+from flask import redirect, request, render_template, jsonify, session
 from http import HTTPStatus
 
 @app.route('/users')
 def users():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * from users")
     results = cursor.fetchall()
@@ -18,6 +21,9 @@ def users():
 
 @app.route('/users/add', methods=['POST'])
 def add_user():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     user_name = request.form['user_name']
     last_name = request.form['last_name']
     email = request.form['email']
@@ -33,6 +39,9 @@ def add_user():
 
 @app.route('/users/frontAdd', methods=['POST'])
 def add_user_front():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     user_name = request.json.get('user_name', None)
     last_name = request.json.get('last_name', None)
     email = request.json.get('email', None)
@@ -52,6 +61,9 @@ def add_user_front():
 
 @app.route('/users/edit/<string:id>', methods=['POST'])
 def edit_user(id):
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     user_name = request.form['user_name']
     last_name = request.form['last_name']
     email = request.form['email']
@@ -72,6 +84,9 @@ def edit_user(id):
 
 @app.route('/users/delete', methods=['GET'])
 def delete_user():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     id_to_delete = request.args.get('id')
     
     cursor = mysql.connection.cursor()

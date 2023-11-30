@@ -1,8 +1,11 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template
+from flask import redirect, request, render_template, session
 
 @app.route('/short_stop')
 def short_stop():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     # Obtén el número total de registros en la tabla
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT COUNT(*) from short_stop")
@@ -41,6 +44,9 @@ def short_stop():
 
 @app.route('/short_stop/add', methods=['POST'])
 def add_short_stop():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -55,6 +61,9 @@ def add_short_stop():
 
 @app.route('/short_stop/edit/<string:id>', methods=['POST'])
 def edit_short_stop(id):
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     form_data = request.form.to_dict(flat=True)
 
     cursor = mysql.connection.cursor()
@@ -88,6 +97,9 @@ def edit_short_stop(id):
 
 @app.route('/short_stop/delete', methods=['GET'])
 def delete_short_stop():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     id_to_delete = request.args.get('id')
     
     cursor = mysql.connection.cursor()

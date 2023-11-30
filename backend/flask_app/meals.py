@@ -1,5 +1,5 @@
 from flask_app import app, mysql
-from flask import redirect, request, render_template, jsonify
+from flask import redirect, request, render_template, jsonify, session
 from PIL import Image
 import base64
 import io
@@ -9,6 +9,9 @@ import os
 
 @app.route('/meals')
 def meals():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * from meals")
     results = cursor.fetchall()
@@ -23,6 +26,9 @@ def meals():
 
 @app.route('/meals/add', methods=['POST'])
 def add_meal():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     # Getting the form fields
     meal_name = request.form['meal_name']
     price = request.form['price']
@@ -66,6 +72,9 @@ def add_meal():
 
 @app.route('/meals/edit/<string:id>', methods=['POST'])
 def edit_meal(id):
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     meal_name = request.form['meal_name']
     price = request.form['price']
     description = request.form['description']
@@ -119,6 +128,9 @@ def edit_meal(id):
 
 @app.route('/meals/delete', methods=['GET'])
 def delete_meal():
+    if not session.get('loggedin', False):
+        return redirect('login')
+    
     id_to_delete = request.args.get('id')
     
     cursor = mysql.connection.cursor()
