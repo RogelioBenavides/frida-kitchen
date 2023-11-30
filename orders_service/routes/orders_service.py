@@ -74,7 +74,7 @@ def get_orders(id_user):
         return jsonify({'error': str(e)}), 500
 
 @app.route('/orders', methods=["GET"])
-def get_orders(id_user):
+def get_all_orders():
     try:
         cursor = mysql.connection.cursor()
 
