@@ -19,7 +19,7 @@ mysql = MySQL(app)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 # Setup the Flask-JWT-Extended extension
-app.config["JWT_SECRET_KEY"] = os.environ.get('JWT_KEY')
+app.config["JWT_SECRET_KEY"] = os.environ.get('SECRET_KEY')
 jwt = JWTManager(app)
 
 # Create a route to authenticate your users and return JWTs. The
