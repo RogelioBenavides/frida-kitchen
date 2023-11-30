@@ -1,7 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from flask_jwt_extended import create_access_token, JWTManager
 from flask_mysqldb import MySQL
 from dotenv import load_dotenv
 import os
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -14,6 +17,19 @@ app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB')
 
 mysql = MySQL(app)
 
-@app.route('/')
-def index():
-    return 'Puerto 5005'
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
+@app.route('/coords', methods=["GET"])
+def get_coords():
+    try:
+        cursor = mysql.connection.cursor()
+        cursor.execute("SELECT latitude, longitude FROM sample")
+        results = cursor.fetchall()
+        cursor.close()
+
+        coords = [{'lat': row[0], 'lng': row[1]} for row in results]
+
+        return jsonify({'coords': coords})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
