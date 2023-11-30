@@ -15,5 +15,9 @@ echo Ejecutando microservicio Ordenes en el puerto 5002
 start "OrdersService" cmd /c python orders_service\app.py
 timeout /nobreak /t 2 >nul
 
+echo Ejecutando microservicio Ordenes en el puerto 5005
+start "TrackingService" cmd /c python tracking_service\app.py
+timeout /nobreak /t 2 >nul
+
 echo Saliendo del entorno virtual
 call deactivate
