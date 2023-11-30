@@ -27,9 +27,7 @@ CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 from flask_app import company
 from flask_app import identity_company
 from flask_app import identity
-from flask_app import ingredients
 from flask_app import long_stop
-from flask_app import meal_ingredients
 from flask_app import meals
 from flask_app import order_meals
 from flask_app import orders
