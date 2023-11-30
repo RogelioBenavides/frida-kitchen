@@ -26,7 +26,7 @@ jwt = JWTManager(app)
 @app.route('/orders/<string:id_user>', methods=["GET"])
 def get_orders(id_user):
     try:
-        cursor = mysql.connection.cursor(dictionary=True)
+        cursor = mysql.connection.cursor()
 
         cursor.execute("""
             SELECT orders.id, orders.id_route, orders.created_at,
@@ -37,9 +37,15 @@ def get_orders(id_user):
             WHERE orders.id_user = %s
         """, (id_user,))
         
+          # Fetching the results
         results = cursor.fetchall()
-        cursor.close()
 
+        # Getting column names from the cursor
+        columns = [col[0] for col in cursor.description]
+
+        # Converting each row to a dictionary
+        results = [dict(zip(columns, row)) for row in results]
+        
         if len(results) == 0:
             return jsonify({"msg": "Ninguna orden en la lista"}), 401
 
