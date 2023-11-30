@@ -35,4 +35,4 @@ def login():
         return jsonify({"msg": "Bad username or password"}), 401
         
     access_token = create_access_token(identity=email)
-    return jsonify({"access_token": access_token, "user": results[0][0]})
+    return jsonify({"access_token": access_token, "user": results[0][0], "role": results[0][5]})
