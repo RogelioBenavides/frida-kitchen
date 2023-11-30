@@ -23,12 +23,10 @@ CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 app.config["JWT_SECRET_KEY"] = "super-secret" # Change this!
 jwt = JWTManager(app)
 
-@app.route('/orders', methods=["GET"])
-def get_orders():
+@app.route('/orders/<string:id_user>', methods=["GET"])
+def get_orders(id_user):
     try:
-        id_user = request.json.get('id_user', None)
-
-        cursor = mysql.connection.cursor(dictionary=True)
+        cursor = mysql.connection.cursor()
 
         cursor.execute("""
             SELECT orders.id, orders.id_route, orders.created_at,
@@ -39,9 +37,15 @@ def get_orders():
             WHERE orders.id_user = %s
         """, (id_user,))
         
+          # Fetching the results
         results = cursor.fetchall()
-        cursor.close()
 
+        # Getting column names from the cursor
+        columns = [col[0] for col in cursor.description]
+
+        # Converting each row to a dictionary
+        results = [dict(zip(columns, row)) for row in results]
+        
         if len(results) == 0:
             return jsonify({"msg": "Ninguna orden en la lista"}), 401
 
@@ -74,28 +78,34 @@ def create_order():
     try:
         data = request.get_json()
         print(data)
-        # cursor = mysql.connection.cursor()
-        # cursor.execute("""
-        #     INSERT INTO orders (id_route, id_user, created_at)
-        #     VALUES (%s, %s, %s)
-        # """, (data['id_route'], data['id_user'], datetime.utcnow()))
-        # mysql.connection.commit()
+        cursor = mysql.connection.cursor()
+        cursor.execute("""
+            INSERT INTO orders (id_route, id_user, created_at)
+            VALUES (8634, %s, %s)
+        """, (data['id_user'], datetime.utcnow()))
+        mysql.connection.commit()
+        print('order inserted')
 
-        # order_id = cursor.lastrowid
+        order_id = cursor.lastrowid
 
-        # for meal_data in data.get('cart', []):
-        #     cursor.execute("""
-        #         INSERT INTO order_meals (id_meal, id_order, quantity)
-        #         VALUES (%s, %s, %s)
-        #     """, (meal_data['id_meal'], order_id, meal_data['quantity']))
+        for meal_data in data.get('order', []):
+            print(meal_data['id'])
+            cursor.execute("""
+                INSERT INTO order_meals (id_meal, id_order, quantity)
+                VALUES (%s, %s, %s)
+            """, (meal_data['id'], order_id, meal_data['quantity']))
         
-        # cursor.execute(
-        #     """INSERT INTO payments (id_order, payment_method, payment_amount, payment_date)
-        #     VALUES (%s, 'PAYPAL', %s, %s)
-        #     """, (order_id, data['payment'][], datetime.utcnow()))
+        print('meals inserted')
+        
+        print(data['payment']['purchase_units'][0]['amount']['value'])
 
-        # mysql.connection.commit()
-        # cursor.close()
+        cursor.execute(
+            """INSERT INTO payments (id_order, payment_method, payment_amount, payment_date)
+            VALUES (%s, 'PAYPAL', %s, %s)
+            """, (order_id, data['payment']['purchase_units'][0]['amount']['value'], datetime.utcnow()))
+
+        mysql.connection.commit()
+        cursor.close()
 
         return jsonify({'message': 'Orden creada exitosamente'}), 201
     except Exception as e:
